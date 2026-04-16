@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - db-staging-helmrelease.yaml
 - flux-monitoring-gitrepository.yaml
-- flux-system-gitrepository.yaml
+- instavote-gitrepository.yaml
 - github-instavote-provider.yaml
 - instavote-gitrepository.yaml
 - instavote-receiver.yaml

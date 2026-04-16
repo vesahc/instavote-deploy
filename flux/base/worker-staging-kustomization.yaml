@@ -3,12 +3,12 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: worker-staging
-  namespace: flux-system
+  namespace: instavote
 spec:
   dependsOn:
   - name: redis-staging
   interval: 1h
-  path: ./deploy/worker/staging
+  path: ./kustomize/worker/staging
   prune: true
   sourceRef:
     kind: GitRepository

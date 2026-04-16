@@ -3,7 +3,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: kube-prometheus-stack
-  namespace: flux-system
+  namespace: instavote
 spec:
   interval: 1h0m0s
   path: ./monitoring/controllers/kube-prometheus-stack

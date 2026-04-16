@@ -5,7 +5,7 @@ metadata:
   annotations:
     reconcile.fluxcd.io/requestedAt: "2026-04-16T02:57:49.901078748Z"
   name: vote
-  namespace: flux-system
+  namespace: instavote
 spec:
   exclusionList:
   - ^.*\.sig$

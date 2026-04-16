@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: lfs269
-  namespace: flux-system
+  namespace: instavote
 spec:
   interval: 1m0s
   url: https://lfs269.github.io/helm-charts
