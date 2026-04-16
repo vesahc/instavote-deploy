@@ -3,9 +3,8 @@ kind: Kustomization
 resources:
 - db-staging-helmrelease.yaml
 - flux-monitoring-gitrepository.yaml
-- instavote-gitrepository.yaml
+- flux-system-gitrepository.yaml
 - github-instavote-provider.yaml
-- instavote-gitrepository.yaml
 - instavote-receiver.yaml
 - kube-prometheus-stack-kustomization.yaml
 - lfs269-helmrepository.yaml
