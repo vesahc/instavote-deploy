@@ -5,15 +5,15 @@ metadata:
   annotations:
     reconcile.fluxcd.io/requestedAt: "2026-04-16T01:53:19.13881256Z"
   labels:
-    kustomize.toolkit.fluxcd.io/name: instavote
+    kustomize.toolkit.fluxcd.io/name: instavote-deploy
     kustomize.toolkit.fluxcd.io/namespace: instavote
-  name: instavote
+  name: instavote-deploy
   namespace: instavote
 spec:
   interval: 1m0s
   ref:
     branch: main
   secretRef:
-    name: instavote
+    name: instavote-deploy
   timeout: 1m0s
   url: https://github.com/vesahc/flux-infra.git

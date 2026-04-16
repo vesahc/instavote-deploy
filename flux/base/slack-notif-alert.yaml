@@ -3,7 +3,7 @@ apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
   labels:
-    kustomize.toolkit.fluxcd.io/name: instavote
+    kustomize.toolkit.fluxcd.io/name: instavote-deploy
     kustomize.toolkit.fluxcd.io/namespace: instavote
   name: slack-notif
   namespace: instavote
