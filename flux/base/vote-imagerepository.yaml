@@ -1,0 +1,14 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageRepository
+metadata:
+  annotations:
+    reconcile.fluxcd.io/requestedAt: "2026-04-16T02:57:49.901078748Z"
+  name: vote
+  namespace: flux-system
+spec:
+  exclusionList:
+  - ^.*\.sig$
+  image: okimaw/vote
+  interval: 1m0s
+  provider: generic
