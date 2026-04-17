@@ -35,7 +35,7 @@ spec:
     threshold: 3
     # --- enable this for blue/green
     # number of checks to run before rollback
-    iterations: 5
+    #    iterations: 5
     # ---
     # === enable this for canary
     # max traffic percentage routed to canary
@@ -45,14 +45,14 @@ spec:
     # percentage (0-100)
     #stepWeight: 5
     # ===
-    metrics:
-    - name: error-rate
-      templateRef:
-        name: error-rate
-        namespace: flagger-system
-      thresholdRange:
-        max: 1
-      interval: 30s
+    #    metrics:
+    #    - name: error-rate
+    #      templateRef:
+    #        name: error-rate
+    #        namespace: flagger-system
+    #      thresholdRange:
+    #        max: 1
+    #      interval: 30s
     webhooks:
       - name: acceptance-test
         type: pre-rollout

@@ -4,8 +4,38 @@ metadata:
   name: vote
   namespace: instavote
 spec:
+  provider: nginx
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: vote
+  ingressRef:
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    name: vote
+  autoscalerRef:
+    apiVersion: autoscaling/v2beta2
+    kind: HorizontalPodAutoscaler
+    name: vote
+  progressDeadlineSeconds: 60
+  service:
+    port: 80
+    targetPort: 80
   analysis:
-    interval: 10s
+    interval: 30s
     threshold: 10
     maxWeight: 50
     stepWeight: 5
+    webhooks:
+      - name: acceptance-test
+        type: pre-rollout
+        url: http://flagger-loadtester.flagger-system/
+        timeout: 30s
+        metadata:
+          type: bash
+          cmd: "curl http://vote-canary.instavote/ | grep choice"
+      - name: load-test
+        url: http://flagger-loadtester.flagger-system/
+        timeout: 5s
+        metadata:
+          cmd: "hey -z 30s -q 10 -c 2 -host vote.example.com http://104.168.34.7"
