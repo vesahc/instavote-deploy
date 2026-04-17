@@ -4,6 +4,7 @@ resources:
 - ../base
 patchesStrategicMerge:
 - deployment.yaml
+- canary.yaml
 namespace: instavote
 images:
 - name: schoolofdevops/vote
